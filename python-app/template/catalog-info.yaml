@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{values.app_name}}
+  description: ${{values.app_name}} platform.
+  annotations:
+    github.com/project-slug: scortellino/${{values.app_name}}
+
+spec:
+  type: website
+  owner: developer
+  lifecycle: experimental
