@@ -1,0 +1,4 @@
+Definition of the template
+
+The app name is ${{app_name}}
+The environment is ${{app_env}}
