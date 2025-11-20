@@ -1,4 +1,0 @@
-Definition of the template
-
-The app name is ${{values.app_name}}
-The environment is ${{values.app_env}}
