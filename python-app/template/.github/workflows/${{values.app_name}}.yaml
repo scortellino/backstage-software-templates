@@ -67,7 +67,7 @@ jobs:
       - name: Login to ArgoCD
         shell: bash
         run: |
-          argocd login argocd.test.com \
+          argocd login argocd-server.argocd.svc.cluster.local \
             --insecure  \
             --grpc-web \
             --username admin \
