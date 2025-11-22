@@ -63,6 +63,13 @@ jobs:
           default_author: github_actions
           push: true
 
+      - name: Wait for commit to be visible
+        shell: bash
+        run: |
+          echo "Waiting for commit to be pushed and visible..."
+          sleep 10
+          git pull origin main
+
       - name: Install kubectl and argocd CLI
         shell: bash
         run: |
