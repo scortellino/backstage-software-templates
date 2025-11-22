@@ -94,5 +94,10 @@ jobs:
       - name: Argocd app sync
         shell: bash
         run: |
-          argocd app sync ${{values.app_name}}
-          argocd app wait ${{values.app_name}} --timeout 180
+          argocd app sync ${{values.app_name}} --prune
+          argocd app wait ${{values.app_name}} --timeout 300 --health || {
+            echo "Application did not become healthy in time, checking status..."
+            argocd app get ${{values.app_name}}
+            kubectl get pods -n ${{values.app_env}}
+            exit 1
+          }
